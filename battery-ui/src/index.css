@@ -12,3 +12,44 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.temperature-border {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  width: 500px;
+  height: 500px;
+  border: 15px solid;
+  border-radius: 50%;
+}
+
+.live-value-wrapper {
+  position: relative;
+  top: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.live-value {
+  position: absolute;
+  top: 100px;
+  font-weight: bold;
+}
+
+.temperature-warning {
+  position: absolute;
+  top: 270px;
+}
+
+.temperature-wrapper {
+  width: 600px;
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  margin-bottom: 50px;
+}
