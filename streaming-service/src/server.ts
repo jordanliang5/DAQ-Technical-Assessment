@@ -8,14 +8,54 @@ const websocketServer = new WebSocketServer({ port: 8080 });
 
 tcpServer.on('connection', (socket) => {
     console.log('TCP client connected');
-    
+
+    // Initialise setNewStart to be true when server is first run
+    // Temp counts and interval start time initially zero
+    var setNewStart = true;
+    var exceededTempCount = 0;
+    var intervalStart = 0;
+
+    // Initialise log file (create if doesn't exist)
+    var fs = require('fs')
+    var error_logger = fs.createWriteStream('incidents.log', {
+        flags: 'a+'
+    })
+
     socket.on('data', (msg) => {
         console.log(msg.toString());
-        // Without a try/catch statement, when invalid JSON is received, execution halts.
-        // With this statement, invalid JSON is still flagged but the program is allowed to
-        // continue to run
         try {
-            JSON.parse(msg.toString());
+            let currJSON = JSON.parse(msg.toString());
+            let temp = currJSON.battery_temperature;
+            let currTime = currJSON.timestamp;
+
+            if (setNewStart) {
+                intervalStart = currTime;
+                setNewStart = false;
+            }
+
+            // Increment count if temperature unsafe
+            if (temp < 20 || temp > 80) {
+                exceededTempCount++;
+            }
+
+            // Check if count is more than 3 within 5 seconds
+            if (((currTime - intervalStart)/1000) )
+
+
+            if (exceededTempCount > 3) {
+                var date = Date();
+                var timeInterval = (currTime - intervalStart)/1000;       
+                if (timeInterval <= 5) {
+                    // If Within 5 seconds, write log entry
+                    console.log(`${date}: Exceeded range 3 times in 5 seconds! Writing to report...`);
+                    error_logger.write(`${date}: Exceeded temperature range more than 3 times in 5 seconds!` + '\r\n');
+                }    
+
+                // Reset timer and counts
+                setNewStart = true;
+                exceededTempCount = 0;
+            }       
+            
         } catch (error) {
             console.error(error);
         }
