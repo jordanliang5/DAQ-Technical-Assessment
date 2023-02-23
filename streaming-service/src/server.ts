@@ -11,10 +11,14 @@ tcpServer.on('connection', (socket) => {
     
     socket.on('data', (msg) => {
         console.log(msg.toString());
-
-        // HINT: what happens if the JSON in the received message is formatted incorrectly?
-        // HINT: see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/try...catch
-        let currJSON = JSON.parse(msg.toString());
+        // Without a try/catch statement, when invalid JSON is received, execution halts.
+        // With this statement, invalid JSON is still flagged but the program is allowed to
+        // continue to run
+        try {
+            JSON.parse(msg.toString());
+        } catch (error) {
+            console.error(error);
+        }
 
         websocketServer.clients.forEach(function each(client) {
             if (client.readyState === WebSocket.OPEN) {
