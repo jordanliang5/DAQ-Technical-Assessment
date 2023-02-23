@@ -31,3 +31,5 @@ OUT OF RANGE: Too high/Too low
 Potentially:
 Store the last 10 temperatures and display their average
 Plot temperatures on a graph
+
+Can't think of anything

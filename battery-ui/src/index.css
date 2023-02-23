@@ -1,8 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap');
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'Source Code Pro', monospace;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: black;
@@ -13,43 +13,3 @@ code {
     monospace;
 }
 
-.temperature-border {
-  display: flex;
-  flex-direction: column;
-  align-content: center;
-  width: 500px;
-  height: 500px;
-  border: 15px solid;
-  border-radius: 50%;
-}
-
-.live-value-wrapper {
-  position: relative;
-  top: 40px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.live-value {
-  position: absolute;
-  top: 100px;
-  font-weight: bold;
-}
-
-.temperature-warning {
-  position: absolute;
-  top: 270px;
-}
-
-.temperature-wrapper {
-  width: 600px;
-  height: 600px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  align-content: center;
-  justify-content: center;
-  margin-bottom: 50px;
-}

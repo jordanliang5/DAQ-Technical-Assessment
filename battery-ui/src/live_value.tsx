@@ -8,15 +8,15 @@ interface TemperatureProps {
 function tempColour(temp: number): string {
   var colour = 'white';
   if (40 < temp && 60 > temp) {
-    colour = 'green-yellow';
+    colour = '#87fc6f';
   } else if ((30 <= temp && 40 >= temp) ||
              (60 <= temp && 70 >= temp)) {
-    colour = 'yellow';
+    colour = '#fcf33f';
   } else if ((20 <= temp && 30 >= temp) ||
              (70 <= temp && 80 >= temp)) {
-    colour = 'orange';
+    colour = '#ff8336';
   } else {
-    colour = 'red';
+    colour = '#ff4040';
   }
 
   return colour;
