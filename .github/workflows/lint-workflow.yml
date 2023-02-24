@@ -1,18 +1,12 @@
 name: Lint
-
-on:
-  push:
-    branches:
-      - main
-  pull_request:
-    branches:
-      - main
-
+run-name: Lint testing
+on: [push]
 jobs:
-  run-linters:
+  run-linter-battery-ui:
     name: Run linters
     runs-on: ubuntu-latest
-
+    env:
+      working-directory: ./battery-ui
     steps:
       - name: Check out Git repository
         uses: actions/checkout@v2
@@ -20,7 +14,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v1
         with:
-          node-version: 12
+          node-version: 18.x
 
       - name: Install Node.js dependencies
         run: npm ci
