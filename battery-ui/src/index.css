@@ -1,11 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+:root {
+  --bg-colour: #1c1e2b;
+  --widget-bg-colour: #11131b;
+  --widget-outline-colour: #46474e;
+}
 
 body {
   margin: 0;
-  font-family: 'Source Code Pro', monospace;
+  font-family: 'Roboto', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: black;
+  background-color: var(--bg-colour);
 }
 
 code {

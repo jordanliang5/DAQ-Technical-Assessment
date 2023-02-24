@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import LiveValue from './live_value'
-import RedbackLogo from './redback_logo.jpg';
+import RedbackLogo from './redback-logo-transparent.png';
 import './App.css';
 
 function App() {
@@ -36,12 +36,19 @@ function App() {
 
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={RedbackLogo} className="redback-logo" alt="Redback Racing Logo"/>
-        <p className='value-title'>
-          Live Battery Temperature
-        </p>
-        <LiveValue temp={temperature}/>
+      <header className="App-header">      
+        <div className='header-bar'>
+          <div className='logo-wrapper'>
+            <img src={RedbackLogo} className="redback-logo" alt="Redback Racing Logo"/>
+          </div>
+          <span className='app-title'>Telemetry Display</span>
+        </div>
+        <div className='temperature-widget'>
+          <span className='value-title'>Live Battery Temperature</span>
+          <hr className='line-rule'/>
+          <LiveValue temp={temperature}/>
+          <hr className='line-rule'/>
+        </div>
       </header>
     </div>
   );
