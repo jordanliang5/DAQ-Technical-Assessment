@@ -1,18 +1,10 @@
 name: Lint
-
-on:
-  push:
-    branches:
-      - main
-  pull_request:
-    branches:
-      - main
-
+run-name: Running ESLint checks
+on: [push]
 jobs:
   run-linters:
     name: Run linters
     runs-on: ubuntu-latest
-
     steps:
       - name: Check out Git repository
         uses: actions/checkout@v2
