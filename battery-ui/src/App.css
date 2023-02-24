@@ -3,7 +3,7 @@
 }
 
 .App-header {
-  background-color: var(--bg-colour);
+  background-color: #000000;
   min-height: 10vh;
   display: flex;
   flex-direction: column;
@@ -13,65 +13,22 @@
   color: white;
 }
 
-.header-bar {
-  display: flex;
-  flex-direction: row;
-  align-content: center;
-  align-items: center;
-  column-gap: 30px;
-  width: 95%;
-  margin-top: 25px;
-  margin-bottom: 25px;
-  border-radius: 10px;
-  background-color: var(--widget-bg-colour);
-}
-
-.app-title {
-  color: rgb(255, 150, 150);
-  font-weight: bold;
-  font-size: 70px;
-}
-
-.logo-wrapper {
-  padding: 20px;
+.live-value {
+  color: white;
+  font-size: calc(100px + 2vmin);
+  padding: 5%;
 }
 
 .redback-logo {
   max-width: calc(200px + 1vmin);
   display: flex;
   align-self: center;
-  padding: 5px;
-  border-radius: 10px;
-  background-color: rgb(255, 255, 255);
-}
-
-.temperature-widget {
-  display: flex;
-  flex-direction: column;
-  border: 4px solid var(--widget-outline-colour);
-  border-radius: 10px;
-  background-color: var(--widget-bg-colour);
-  padding: 40px;
-  margin-bottom: 50px;
-}
-
-.live-value {
-  color: white;
-  font-family: 'Source Code Pro', monospace;
-  font-size: calc(100px + 2vmin);
-  padding: 5%;
+  padding-top: 5%;
 }
 
 .value-title {
-  font-size: calc(10px + 2vmin);
-  color: rgb(137, 135, 248);
+  font-size: calc(30px + 2vmin);
   font-weight: bold;
-  text-align: left;
-}
-
-.line-rule {
-  border-color: var(--widget-outline-colour);
-  width: 100%;
 }
 
 .temperature-border {
@@ -112,5 +69,6 @@
   align-items: center;
   align-content: center;
   justify-content: center;
+  margin-bottom: 50px;
 }
 
