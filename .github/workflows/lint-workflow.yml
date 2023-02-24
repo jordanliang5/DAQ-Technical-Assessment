@@ -1,10 +1,12 @@
 name: Lint
-run-name: Running ESLint checks
+run-name: Lint testing
 on: [push]
 jobs:
-  run-linters:
+  run-linter-battery-ui:
     name: Run linters
     runs-on: ubuntu-latest
+    env:
+      working-directory: ./battery-ui
     steps:
       - name: Check out Git repository
         uses: actions/checkout@v2
@@ -13,6 +15,9 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: 18.x
+
+      - name: Install Node.js dependencies
+        run: npm ci
 
       - name: Run linters
         uses: wearerequired/lint-action@v2
