@@ -9,9 +9,8 @@ const websocketServer = new WebSocketServer({ port: 8080 });
 tcpServer.on('connection', (socket) => {
     console.log('TCP client connected');
 
-    // Initialise setNewStart to be true when server is first run
     // Temp counts and interval start time initially zero
-    var setNewStart = true;
+    var setNewInterval = false;
     var exceededTempCount = 0;
     var intervalStart = 0;
 
@@ -28,9 +27,15 @@ tcpServer.on('connection', (socket) => {
             let temp = currJSON.battery_temperature;
             let currTime = currJSON.timestamp;
 
-            if (setNewStart) {
+            // Check if still within 5 seconds
+            if (((currTime - intervalStart)/1000) > 5 ) {
+                setNewInterval = true;
+            } 
+
+            if (setNewInterval) {
                 intervalStart = currTime;
-                setNewStart = false;
+                exceededTempCount = 0;
+                setNewInterval = false;
             }
 
             // Increment count if temperature unsafe
@@ -38,22 +43,13 @@ tcpServer.on('connection', (socket) => {
                 exceededTempCount++;
             }
 
-            // Check if count is more than 3 within 5 seconds
-            if (((currTime - intervalStart)/1000) )
-
-
+            // Check if exceeds 3 failures
             if (exceededTempCount > 3) {
-                var date = Date();
-                var timeInterval = (currTime - intervalStart)/1000;       
-                if (timeInterval <= 5) {
-                    // If Within 5 seconds, write log entry
-                    console.log(`${date}: Exceeded range 3 times in 5 seconds! Writing to report...`);
-                    error_logger.write(`${date}: Exceeded temperature range more than 3 times in 5 seconds!` + '\r\n');
-                }    
-
-                // Reset timer and counts
-                setNewStart = true;
-                exceededTempCount = 0;
+                var date = Date();   
+                // Within 5 seconds, write log entry
+                console.log(`${date}: Exceeded range 3 times in 5 seconds! Writing to report...`);
+                error_logger.write(`${date}: Exceeded temperature range more than 3 times in 5 seconds!` + '\r\n');
+                setNewInterval = true;
             }       
             
         } catch (error) {
