@@ -12,11 +12,9 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: "18.x"
-
       - name: Install Node.js dependencies
         - run: npm install
         - run: npm ci
-
       - name: Run linters
         uses: wearerequired/lint-action@v2
         with:
