@@ -1,3 +1,4 @@
+---
 name: Run automated unit tests
 on: [push]
 
