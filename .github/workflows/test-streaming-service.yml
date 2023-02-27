@@ -1,0 +1,28 @@
+name: Run automated unit tests
+on: [push]
+
+defaults:
+  run:
+    working-directory: streaming-service
+
+jobs:
+  tests:
+    name: Run automated tests on codebase
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [18.x, 16.x, 14.x]
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - name: Use Node.js ${{ matrix.node-version }}
+            uses: actions/setup-node@v1
+            with:
+              node-version: ${{ matrix.node-version }}
+          - run: npm ci
+          - run: npm run build --if-present
+          - run: npm test 
