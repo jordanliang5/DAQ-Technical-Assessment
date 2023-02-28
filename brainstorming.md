@@ -53,6 +53,6 @@ Image and container successfuly created and up and running on port 12000. The pr
 
 Following some guides online, I also have tried setting up two images, a dev environment (which currently builds successfully and can run, docker-compose.dev.yml) and the prod environment (which doesnt build properly, docker-compose.yml). This comes down to the line "COPY --from=development /user/src/app/dist ./dist" being unable to find the dist directory in the given path.
 
-I think this is because dist is not being properly created when "npm run build" is called in the "development" part of the dockerfile. However, I'm not sure why its not making the dist file. I think we can probably make do with just the 'dev' environment for now, I could probably just make it the sole image by getting rid of the dev/production stuff, but I'd rather not break anything that I won't have time to fix!
+I think this is because dist is not being properly created when "npm run build" is called in the "development" part of the dockerfile. However, I'm not sure why its not making the dist file. I think we can probably make do with just the 'dev' environment for now, I could probably just make it the sole image by getting rid of the dev/production stuff, but I'd rather not break anything else!
 
 Hopefully this is enough!
