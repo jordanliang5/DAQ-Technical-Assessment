@@ -42,7 +42,7 @@ I followed the below ranges when figuring out how to style the frontend. I had t
 
 - Works. Used superlint because had some issues with base lint
 
-### Testing:
+### Testing
 
 - Works. Had issues with connection remaining open but wrote a function to close it. Wrote some unit tests for the streaming-service.
 
