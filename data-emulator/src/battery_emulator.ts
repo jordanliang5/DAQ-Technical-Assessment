@@ -5,7 +5,7 @@ const tcpClient = new net.Socket();
 const HOST = "localhost"
 const PORT = 12000
 
-const MILLISECONDS = 1000;
+const MILLISECONDS = 500;
 const ERROR_CHANCE = 100;
 
 function generate_and_send_battery_data() {

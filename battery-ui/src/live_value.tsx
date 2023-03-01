@@ -5,20 +5,27 @@ interface TemperatureProps {
   temp: number;
 }
 
+const colours = {
+  'default':'#ffffff',
+  'safe': '#87fc6f',
+  'moderate':'#fcf33f',
+  'caution':'#ff8336',
+  'unsafe':'#ff4040'
+}
+
 function tempColour(temp: number): string {
-  var colour = 'white';
+  var colour = colours.default;
   if (40 < temp && 60 > temp) {
-    colour = '#87fc6f';
+    colour = colours.safe;
   } else if ((30 <= temp && 40 >= temp) ||
              (60 <= temp && 70 >= temp)) {
-    colour = '#fcf33f';
+    colour = colours.moderate;
   } else if ((20 <= temp && 30 >= temp) ||
              (70 <= temp && 80 >= temp)) {
-    colour = '#ff8336';
+    colour = colours.caution;
   } else {
-    colour = '#ff4040';
+    colour = colours.unsafe;
   }
-
   return colour;
 }
 

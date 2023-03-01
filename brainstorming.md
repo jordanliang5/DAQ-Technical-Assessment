@@ -22,19 +22,19 @@ Initially I just got the time of each datapoint using Date(), but then noticed t
 
 ## Task 3
 
-I followed the below ranges when figuring out how to style the frontend
+I followed the below ranges when figuring out how to style the frontend. I had the colour transition be around 0.5s to not strain the eyes.
 
-40 < temp < 60 green
-30 <= temp <= 40 || 60 <= temp <= 70 yellow
-20 <= temp <= 30 || 70 <= temp <= 80 yellow
-temp < 20 || temp > 80 red
+- (GREEN): 40 < temp < 60
+- (YELLOW): 30 <= temp <= 40 || 60 <= temp <= 70
+- (ORANGE): 20 <= temp <= 30 || 70 <= temp <= 80
+- (RED): temp < 20 || temp > 80
 
-- I also thought it might be useful if a message displayed when the temperature was out of range: Too high/Too low
+* I also thought it might be useful if a message displayed when the temperature was out of range: Too high/Too low
 
-- Thought I'd make it look a bit more aesthetic with a different font and colour scheme. I also added a circle around the temperature
+* Thought I'd make it look a bit more aesthetic with a different font and colour scheme. I also added a circle around the temperature
   to have it look more aesthetic.
 
-- You could possibly extend it by storing the last 10 temperatures and displaying their average. Also, a live graph of temperatures would be good.
+* You could possibly extend it by storing the last 10 temperatures and displaying their average. Also, a live graph of temperatures would be good.
 
 ## Task 4
 
