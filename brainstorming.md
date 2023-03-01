@@ -70,4 +70,6 @@ I followed the below ranges when figuring out how to style the frontend. I had t
 
 - I think this is because dist is not being properly created when "npm run build" is called in the "development" part of the dockerfile. However, I'm not sure why its not making the dist file. I think we can probably make do with just the 'dev' environment for now, I could probably just make it the sole image by getting rid of the dev/production stuff, but I'd rather not break anything else!
 
+* To see my docker implementation attempt - PLEASE go and check the docker branch!
+
 Hopefully this is enough!
