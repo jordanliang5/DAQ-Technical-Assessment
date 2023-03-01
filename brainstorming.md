@@ -45,7 +45,7 @@ Testing: Works. Had issues with connection remaining open but wrote a function t
 Unit tests for the frontend I could also do with potentially utilising mock data (check correct colour is displayed), but I
 thought I'd prioritise trying to get docker up and running. Without some kind of mock data in place I think testing the frontend isn't really all that useful, given the random nature of the data generation.
 If I were to do it, it'd be something along the lines of generating a mock json entry to the server and just checking that the correct colour/message is displayed based on temperature (Don't think I'll have time!)
-Frontend tests don't work because I had issues getting jest to parse typescript in javascript!
+Frontend tests don't work because I had issues getting jest to parse TypeScript into JavaScript!
 The frustrating part is that I managed to do it for the other unit tests in the streaming-service, but the process that I had to go through to do it was really convoluted so I haven't been able to replicate it.
 
 Nonetheless, the idea is to simple render a mock of the live_value component, and then feed it mock temperature data and check if the displayed colour is correct.
