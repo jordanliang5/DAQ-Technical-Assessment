@@ -16,7 +16,7 @@ If we are beyond 5 seconds, then set the current datapoint as the start of a new
 
 At the end of the loop, after checking we are within the interval and whether or not the current datapoint is out of bounds, we then check whether exceededTempCount is over 3.
 
-If it is, then write to report. Obviously, we now need to set a new interval, so change setNewInterval to true, and it will set the next datapoint as the beginning of a new 5 second interval. This handles the case where we go over 3 failures but the next datapoint is still within 5 seconds (therefore the first if statement is not enough, we need this additional check)
+If it is, then write to report. Obviously, we now need to set a new interval, so change setNewInterval to true, and it will set the next datapoint as the beginning of a new 5 second interval. This handles the case where we go over 3 failures but the next datapoint is still within 5 seconds (therefore the first if statement is not enough, we need this additional check).
 
 Task 3
 Temp range colour
