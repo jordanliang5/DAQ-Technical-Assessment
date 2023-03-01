@@ -15,4 +15,3 @@ describe('Basic frontend tests', () => {
     });
 });
 */
-
