@@ -57,7 +57,7 @@ I followed the below ranges when figuring out how to style the frontend. I had t
 
 - Nonetheless, the idea is to simple render a mock of the live_value component, and then feed it mock temperature data and check if the displayed colour is correct.
 
-### Docker
+### Docker - CHECK DOCKER BRANCH TO SEE THIS
 
 - Plenty of initial issues here. Most tutorials tell you how to do it for a js file. Found a method where ts is converted to js to be made into
   a docker image. Necessitates modifications to package.json and tsconfig.json.
